@@ -1,0 +1,16 @@
+# Allow all search engines to access most of the site
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Prevent crawling of draft or staging pages (if applicable)
+Disallow: /draft/
+Disallow: /staging/
+
+# Allow specific dynamic pages or assets (override disallow rules if needed)
+Allow: /_next/static/
+Allow: /_next/image/
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml

@@ -16,19 +16,19 @@ type DraftDocument = {
   [key: string]: unknown; // For additional fields in the document
 };
 
-const runCypress = () => {
-  return new Promise((res, rej) => {
-    fetch("http://localhost:4000/api/run-cypress")
-      .then((response) => {
-        if (response.status === 200) {
-          res({});
-        } else {
-          rej({ error: response.statusText });
-        }
-      })
-      .catch(() => rej({ error: true }));
-  });
-};
+// const runCypress = () => {
+//   return new Promise((res, rej) => {
+//     fetch("http://localhost:4000/api/run-cypress")
+//       .then((response) => {
+//         if (response.status === 200) {
+//           res({});
+//         } else {
+//           rej({ error: response.statusText });
+//         }
+//       })
+//       .catch(() => rej({ error: true }));
+//   });
+// };
 
 const PublishAllButton: React.FC = () => {
   const client = useClient() as SanityClient;

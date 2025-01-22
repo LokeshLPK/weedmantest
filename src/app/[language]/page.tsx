@@ -1,5 +1,4 @@
- /* eslint-disable @typescript-eslint/no-explicit-any */
-
+ 
 import { QueryParams } from 'next-sanity';
 import { headers } from 'next/headers';
 

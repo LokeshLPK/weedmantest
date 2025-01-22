@@ -36,7 +36,11 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-        
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_GOOGLE_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}
+          SANITY_API_WRITE_TOKEN: ${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}
+          SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
+          NEXT_PUBLIC_SANITY_API_READ_TOKEN:  ${{ secrets.NEXT_PUBLIC_SANITY_API_READ_TOKEN }}
       - name: Build and Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

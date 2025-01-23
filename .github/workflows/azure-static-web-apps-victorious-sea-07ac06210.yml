@@ -8,7 +8,13 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
+env:
+    NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+    NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+    NEXT_PUBLIC_GOOGLE_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}
+    SANITY_API_WRITE_TOKEN: ${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}
+    SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
+    NEXT_PUBLIC_SANITY_API_READ_TOKEN:  ${{ secrets.NEXT_PUBLIC_SANITY_API_READ_TOKEN }}
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
